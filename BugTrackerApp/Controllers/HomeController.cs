@@ -20,6 +20,12 @@ namespace BugTrackerApp.Controllers
             return View();
         }
 
+        // GET: Home/Reports
+        public ActionResult Reports()
+        {
+            return View();
+        }
+
         // POST: Home/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -31,7 +37,7 @@ namespace BugTrackerApp.Controllers
                 ViewData["ProgramBehaviour"] = collection[3];
                 ViewData["ReproduceBehaviour"] = collection[4];
 
-                return View("Index");
+                return View("Reports");
             }
             catch
             {
