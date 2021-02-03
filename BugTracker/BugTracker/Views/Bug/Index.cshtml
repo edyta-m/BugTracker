@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<BugTrackerApp.Models.Bug>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Report a Bug";
 }
+<h2>@ViewBag.Title</h2>
+<h5>@ViewBag.Message</h5>
 
 <!DOCTYPE html>
 
@@ -34,32 +36,33 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.bugName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.severity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.timeReported)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.programBehaviour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.reproduceBehaviour)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.bugId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.bugId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.bugId })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bugName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.severity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.timeReported)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.programBehaviour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.reproduceBehaviour)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.bugId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.bugId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.bugId })
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>
