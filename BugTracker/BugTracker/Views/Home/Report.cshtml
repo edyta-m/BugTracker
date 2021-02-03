@@ -1,0 +1,32 @@
+﻿@model BugTracker.Models.ReportModel
+
+@{
+    ViewBag.Title = "Report a Bug";
+}
+<h2>@ViewBag.Title</h2>
+<h5>@ViewBag.Message</h5>
+
+<form>
+    <div class="form-group">
+        <label for="BugTitle">Bug Title:</label>
+        <input type="text" name="BugTitle" value="" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="Severity">Severity:</label>
+        <select name="Severity" class="form-control">
+            <option value="">Select a severity</option>
+            <option value="Low">Low</option>
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ProgramBehaviour">Program Behaviour:</label> <br />
+        <textarea name="ProgramBehaviour" class="form-control" rows="5" placeholder="Describe bug behaviour in program"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="ReproduceBug">How to Reproduce Bug:</label> <br />
+        <textarea name="ReproduceBug" class="form-control" rows="5" placeholder="Explain how to reproduce the bug in the program"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
